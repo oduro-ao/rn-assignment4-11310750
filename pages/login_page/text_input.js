@@ -2,11 +2,19 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, TextInput, Text, View, Pressable } from "react-native";
 
 export default function Text_input() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const navigation = useNavigation();
+
+  const handleLogin = () => {
+    navigation.navigate('Home', { name, email });
+  };
+
   return (
     <View style={styles.container}>
       <TextInput style={styles.name} placeholder="Name" />
       <TextInput style={styles.name} placeholder="Email" />
-      <Pressable style={styles.login}  onPress={() => styles}>
+      <Pressable style={styles.login}  onPress={handleLogin}>
         <Text style={styles.login_text}>Log In</Text>
       </Pressable>
     </View>

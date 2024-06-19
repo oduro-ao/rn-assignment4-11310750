@@ -2,8 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Text_input from "./text_input";
 import IconBar from "./iconbar";
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function Login() {
+  
+
   return (
     <View style={styles.container}>
       <Text style={styles.jobizz}>Jobizz</Text>
@@ -19,6 +23,10 @@ export default function Login() {
         <Text style={styles.text}>Or continue with</Text>
         <View style={styles.line} />
       </View>
+      <IconBar />
+      <Text style={styles.noaccount}>
+          Haven’t an account?<Text style={styles.Regis}> Register </Text>
+        </Text>
     </View>
   );
 }
@@ -26,7 +34,7 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: "1",
-    backgroundColor: "#fff",
+    backgroundColor: "#FAFAFD",
     padding: 24,
     paddingTop: 106,
   },
@@ -68,5 +76,23 @@ const styles = StyleSheet.create({
   text: {
     marginHorizontal: 10,
     color: '#AFB0B6', 
+  },
+
+  noaccount: {
+    marginTop: 20,
+    color: 'rgba(189,190,194,1)',
+    fontSize: 14,
+    fontFamily: 'Circular Std, sans-serif',
+    fontWeight: '400',
+    textAlign: 'center',
+  },
+
+  Regis: {
+    marginTop: 20,
+    color: 'blue',
+    fontSize: 14,
+    fontFamily: 'Circular Std, sans-serif',
+    fontWeight: '400',
+    textAlign: 'center',
   },
 });
