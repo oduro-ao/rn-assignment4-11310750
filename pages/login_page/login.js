@@ -1,20 +1,72 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import Text_input from "./text_input";
+import IconBar from "./iconbar";
 
 export default function Login() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.jobizz}>Jobizz</Text>
+      <View style={styles.welcome_text}>
+        <Text style={styles.welcome}>Welcome Back 👋</Text>
+        <Text style={styles.login_text}>Let’s log in. Apply to jobs!</Text>
+      </View>
+      <View style={styles.login_input}>
+        <Text_input />
+      </View>
+      <View style={styles.line_con}>
+        <View style={styles.line} />
+        <Text style={styles.text}>Or continue with</Text>
+        <View style={styles.line} />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    flex: "1",
+    backgroundColor: "#fff",
+    padding: 24,
+    paddingTop: 106,
+  },
+
+  jobizz: {
+    color: "#356899",
+    fontSize: 22,
+    fontWeight: "600",
+    marginBottom: 10,
+  },
+
+  welcome_text: {
+    marginBottom: 20,
+  },
+  welcome: {
+    color: "#0D0D26",
+    fontSize: 24,
+    fontWeight: "600",
+    marginBottom: 10,
+  },
+  login_text: {
+    color: "#0D0D26",
+    fontSize: 14,
+    fontWeight: "400",
+  },
+
+
+  line_con: {
+    marginTop: 70,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    marginVertical: 20,
+  },
+  line: {
+    flex: 1,
+    height: 1,
+    backgroundColor: '#AFB0B6',
+  },
+  text: {
+    marginHorizontal: 10,
+    color: '#AFB0B6', 
   },
 });
